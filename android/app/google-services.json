@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "750627148168",
+    "project_id": "cafe-bunny",
+    "storage_bucket": "cafe-bunny.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750627148168:android:827942e396776c748aaa3d",
+        "android_client_info": {
+          "package_name": "com.example.cafe_bunny"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "750627148168-ldvg5p9l3lkvd9pc073j58jgo1vjfq01.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cafe_bunny",
+            "certificate_hash": "8aa0231967728602b0d416c003f2f40a07aea76d"
+          }
+        },
+        {
+          "client_id": "750627148168-t154sbta1guoqlrsgbv0nga5l9k858v3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbf4B2PQc09QGpJwafGuhZdiw44MeoMBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "750627148168-t154sbta1guoqlrsgbv0nga5l9k858v3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
