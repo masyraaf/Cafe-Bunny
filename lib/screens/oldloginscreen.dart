@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'home.dart';
+import 'home/home_screen.dart';
 
 class LoginScreen extends StatefulWidget{
   @override
@@ -61,23 +61,6 @@ class _LoginScreenState extends State<LoginScreen>{
                 if (emailController.text  == "" || passwordController.text == ""){
                   print("Please enter both email and password.");
                   return;
-                }
-                try {
-                  UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-                      email: emailController.text,
-                      password: passwordController.text
-                  );
-                  EasyLoading.dismiss();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => HomeScreen()));
-
-                  print("You have successfully logged in with email");
-                } on FirebaseAuthException catch (e) {
-                  if (e.code == 'user-not-found') {
-                    print('No user found for that email.');
-                  } else if (e.code == 'wrong-password') {
-                    print('Wrong password provided for that user.');
-                  }
                 }
               },
               color: logoGreen,

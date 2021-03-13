@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:cafe_bunny/components/custom_bottom_nav_bar.dart';
 
 class HomeScreen extends StatefulWidget{
+  static String routeName = "/home";
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -34,7 +35,8 @@ class _HomeScreenState extends State<HomeScreen>{
            GoogleFonts.openSans(color: Colors.white, fontSize: 28),
          )]
        )
-       )
+       ),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
     );
   }
 
