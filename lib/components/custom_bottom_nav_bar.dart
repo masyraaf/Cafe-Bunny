@@ -1,4 +1,6 @@
 import 'package:cafe_bunny/screens/account/account_screen.dart';
+import 'package:cafe_bunny/screens/qw/achievements.dart';
+import 'package:cafe_bunny/screens/qw/coupons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cafe_bunny/screens/home/home_screen.dart';
@@ -63,18 +65,26 @@ class CustomBottomNavBar extends StatelessWidget {
                   Navigator.pushReplacementNamed(context, AccountScreen.routeName),
               ),
               IconButton(
-                  icon: SvgPicture.asset("assets/icons/medal.png"),
-                onPressed: () {}
-              ),
-              IconButton(
-                icon: SvgPicture.asset(
-                  "assets/icons/coupon.png",
-                  color: MenuState.coupons == selectedMenu
+                icon: Icon(
+                  Icons.auto_awesome,
+                  color:MenuState.home == selectedMenu
                       ? kPrimaryColor
                       : inActiveIconColor,
-                ),
-                onPressed: () {}
-                    // Navigator.pushNamed(context, HomeScreen.routeName),
+                  size: 24,
+                ) ,
+                onPressed: () =>
+                    Navigator.pushReplacementNamed(context, Achievements.routeName),
+              ),
+              IconButton(
+                icon: Icon(
+                  Icons.attach_money_rounded,
+                  color:MenuState.home == selectedMenu
+                      ? kPrimaryColor
+                      : inActiveIconColor,
+                  size: 24,
+                ) ,
+                onPressed: () =>
+                    Navigator.pushReplacementNamed(context, Coupons.routeName),
               ),
             ],
           )),

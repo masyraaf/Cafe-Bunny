@@ -1,4 +1,4 @@
-import 'file:///C:/Users/masyr/AndroidStudioProjects/cafe_bunny/lib/screens/sign_up/sign_up_screen.dart';
+import 'package:cafe_bunny/screens/sign_up/sign_up_screen.dart';
 import 'package:cafe_bunny/size_config.dart';
 import 'package:flutter/material.dart';
 import '../../../components/default_button.dart';

@@ -5,12 +5,16 @@ import 'package:cafe_bunny/screens/home/home_screen.dart';
 import 'package:cafe_bunny/screens/sign_up/sign_up_screen.dart';
 import 'package:cafe_bunny/screens/account/account_screen.dart';
 import 'package:flutter/widgets.dart';
+import 'package:cafe_bunny/screens/qw/achievements.dart';
+import 'package:cafe_bunny/screens/qw/coupons.dart';
 
 
 final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => SplashScreen(),
-  SignInScreen.routeName: (Context) => SignInScreen(),
+  SignInScreen.routeName: (context) => SignInScreen(),
   SignUpScreen.routeName: (context) => SignUpScreen(),
   HomeScreen.routeName: (context) => HomeScreen(),
   AccountScreen.routeName: (context) => AccountScreen(),
+  Achievements.routeName: (context) => Achievements(),
+  Coupons.routeName: (context) => Achievements(),
 };
