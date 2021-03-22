@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cafe_bunny/components/custom_bottom_nav_bar.dart';
+import 'package:cafe_bunny/classes/User.dart';
 
 class HomeScreen extends StatefulWidget{
   static String routeName = "/home";
+  HomeScreen({Key key}) : super(key: key);
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -15,9 +17,14 @@ class _HomeScreenState extends State<HomeScreen>{
   Color secondaryColor = Color(0xff232c51);
   Color logoGreen = Color(0xff25bcbb);
 
+
+  _HomeScreenState();
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+
+    getIDSF().then((id) => print(id));
     return Scaffold(
         backgroundColor: primaryColor,
         appBar: AppBar(
@@ -44,3 +51,4 @@ class _HomeScreenState extends State<HomeScreen>{
 
 
 }
+

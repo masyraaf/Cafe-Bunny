@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:cafe_bunny/size_config.dart';
 
-const kPrimaryColor = Color(0xFFFF7643);
-const kPrimaryLightColor = Color(0xFFFFECDF);
+// const kPrimaryColor = Color(0xFFFF7643);
+// const kPrimaryLightColor = Color(0xFFFFECDF);
+const kPrimaryColor = Color(0xff118203d);
+const kPrimaryLightColor = Color(0xff232c51);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,

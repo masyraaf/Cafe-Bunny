@@ -1,3 +1,5 @@
+import 'package:cafe_bunny/components/custom_bottom_nav_bar.dart';
+import 'package:cafe_bunny/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:cafe_bunny/screens/qw/globals.dart' as gb;
 import 'package:cafe_bunny/screens/qw/couponClass.dart';
@@ -23,18 +25,18 @@ class _AchievementsState extends State<Achievements> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[850],
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
-            'Achievements',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
+          'Achievements',
+          style: TextStyle(
+            color: kPrimaryColor,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.white,
       ),
       body: Column(
         children: <Widget> [
@@ -47,7 +49,7 @@ class _AchievementsState extends State<Achievements> {
               radius: 60.0),
               SizedBox(width: 10),
               Container(
-                color: Colors.blue,
+                color: kPrimaryLightColor,
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(40,5,40,5),
                   child: Text(
@@ -77,7 +79,7 @@ class _AchievementsState extends State<Achievements> {
                       leading: Icon(
                         Icons.auto_awesome,
                         size: 56.0,
-                        color: Colors.blueAccent,
+                        color: kPrimaryLightColor,
                       ),
                       title: Text('"Baby Bunny"'),
                       subtitle: Text('Hop 3 times'),
@@ -90,8 +92,8 @@ class _AchievementsState extends State<Achievements> {
                             // Critical code
                             gb.babybunny = true;
                             print('"Baby Bunny" claimed');
-                          });}, color: Colors.blue, child: Text('CLAIM', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,),),):
-                              Text('CLAIMED', style: TextStyle(color: Colors.blueAccent, fontWeight:FontWeight.bold, fontSize: 20,),),
+                          });}, color: kPrimaryLightColor, child: Text('CLAIM', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,),),):
+                              Text('CLAIMED', style: TextStyle(color: kPrimaryLightColor, fontWeight:FontWeight.bold, fontSize: 20,),),
                     ),
                   ),
                   Card(
@@ -99,7 +101,7 @@ class _AchievementsState extends State<Achievements> {
                       leading: Icon(
                           Icons.attach_money_rounded,
                           size: 56.0,
-                          color: Colors.blueAccent,
+                          color: kPrimaryLightColor,
                       ),
                       title: Text('Coupon 1'),
                       subtitle: Text('Reach Player Level 5'),
@@ -114,7 +116,7 @@ class _AchievementsState extends State<Achievements> {
                         print('Coupon 1 claimed');
                         gb.inventory.add(Coupon(title: 'Coupon 1', code: '1111'));
                       });}, color: Colors.blue, child: Text('CLAIM', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,),),):
-                      Text('CLAIMED', style: TextStyle(color: Colors.blueAccent, fontWeight:FontWeight.bold, fontSize: 20,),),
+                      Text('CLAIMED', style: TextStyle(color: kPrimaryLightColor, fontWeight:FontWeight.bold, fontSize: 20,),),
                     ),
                   ),
                   Card(
@@ -122,7 +124,7 @@ class _AchievementsState extends State<Achievements> {
                       leading: Icon(
                         Icons.attach_money_rounded,
                         size: 56.0,
-                        color: Colors.blueAccent,
+                        color: kPrimaryLightColor,
                       ),
                       title: Text('Coupon 2'),
                       subtitle: Text('Reach Player Level 10'),
@@ -136,8 +138,8 @@ class _AchievementsState extends State<Achievements> {
                         gb.coupon2 = true;
                         print('Coupon 2 claimed');
                         gb.inventory.add(Coupon(title: 'Coupon 2', code: '2222'));
-                      });}, color: Colors.blue, child: Text('CLAIM', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,),),):
-                      Text('CLAIMED', style: TextStyle(color: Colors.blueAccent, fontWeight:FontWeight.bold, fontSize: 20,),),
+                      });}, color: kPrimaryLightColor, child: Text('CLAIM', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,),),):
+                      Text('CLAIMED', style: TextStyle(color: kPrimaryLightColor, fontWeight:FontWeight.bold, fontSize: 20,),),
                     ),
                   ),
                   Card(
@@ -145,7 +147,7 @@ class _AchievementsState extends State<Achievements> {
                       leading: Icon(
                         Icons.auto_awesome,
                         size: 56.0,
-                        color: Colors.blueAccent,
+                        color: kPrimaryLightColor,
                       ),
                       title: Text('"Buffet Bunny"'),
                       subtitle: Text('Hop 10 times'),
@@ -158,8 +160,8 @@ class _AchievementsState extends State<Achievements> {
                         // Critical code
                         gb.buffetbunny = true;
                         print('"Buffet bunny" claimed');
-                      });}, color: Colors.blue, child: Text('CLAIM', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,),),):
-                      Text('CLAIMED', style: TextStyle(color: Colors.blueAccent, fontWeight:FontWeight.bold, fontSize: 20,),),
+                      });}, color: kPrimaryLightColor, child: Text('CLAIM', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,),),):
+                      Text('CLAIMED', style: TextStyle(color: kPrimaryLightColor, fontWeight:FontWeight.bold, fontSize: 20,),),
                     ),
                   ),
                   Card(
@@ -167,7 +169,7 @@ class _AchievementsState extends State<Achievements> {
                       leading: Icon(
                         Icons.attach_money_rounded,
                         size: 56.0,
-                        color: Colors.blueAccent,
+                        color:kPrimaryLightColor,
                       ),
                       title: Text('Coupon 3'),
                       subtitle: Text('Reach Player Level 15'),
@@ -181,8 +183,8 @@ class _AchievementsState extends State<Achievements> {
                         gb.coupon3 = true;
                         print('Coupon 3 claimed');
                         gb.inventory.add(Coupon(title: 'Coupon 3', code: '3333'));
-                      });}, color: Colors.blue, child: Text('CLAIM', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,),),):
-                      Text('CLAIMED', style: TextStyle(color: Colors.blueAccent, fontWeight:FontWeight.bold, fontSize: 20,),),
+                      });}, color: kPrimaryLightColor, child: Text('CLAIM', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,),),):
+                      Text('CLAIMED', style: TextStyle(color: kPrimaryLightColor, fontWeight:FontWeight.bold, fontSize: 20,),),
                     ),
                   ),
                   Card(
@@ -190,7 +192,7 @@ class _AchievementsState extends State<Achievements> {
                       leading: Icon(
                         Icons.attach_money_rounded,
                         size: 56.0,
-                        color: Colors.blueAccent,
+                        color: kPrimaryLightColor,
                       ),
                       title: Text('Coupon 4'),
                       subtitle: Text('Reach Player Level 20'),
@@ -204,8 +206,8 @@ class _AchievementsState extends State<Achievements> {
                         gb.coupon4 = true;
                         print('Coupon 4 claimed');
                         gb.inventory.add(Coupon(title: 'Coupon 4', code: '4444'));
-                      });}, color: Colors.blue, child: Text('CLAIM', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,),),):
-                      Text('CLAIMED', style: TextStyle(color: Colors.blueAccent, fontWeight:FontWeight.bold, fontSize: 20,),),
+                      });}, color:kPrimaryLightColor, child: Text('CLAIM', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,),),):
+                      Text('CLAIMED', style: TextStyle(color:kPrimaryLightColor, fontWeight:FontWeight.bold, fontSize: 20,),),
                     ),
                   ),
                   Card(
@@ -226,8 +228,8 @@ class _AchievementsState extends State<Achievements> {
                         // Critical code
                         gb.superbunny = true;
                         print('"Super bunny" claimed');
-                      });}, color: Colors.blue, child: Text('CLAIM', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,),),):
-                      Text('CLAIMED', style: TextStyle(color: Colors.blueAccent, fontWeight:FontWeight.bold, fontSize: 20,),),
+                      });}, color: kPrimaryLightColor, child: Text('CLAIM', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,),),):
+                      Text('CLAIMED', style: TextStyle(color: kPrimaryLightColor, fontWeight:FontWeight.bold, fontSize: 20,),),
                     ),
                   ),
                 ],
@@ -236,6 +238,7 @@ class _AchievementsState extends State<Achievements> {
           ),
         ],
       ),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.achievements),
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(12.0),
         child: FloatingActionButton(
@@ -249,6 +252,7 @@ class _AchievementsState extends State<Achievements> {
               }
             });
           },
+          backgroundColor: kPrimaryLightColor,
           tooltip: 'Increment',
           child: Text('HOP!'),
         ),

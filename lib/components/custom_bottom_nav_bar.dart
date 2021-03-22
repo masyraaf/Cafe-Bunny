@@ -10,11 +10,10 @@ import '../constants.dart';
 enum MenuState { home, account, achievements, coupons }
 
 class CustomBottomNavBar extends StatelessWidget {
-  const CustomBottomNavBar({
+  const  CustomBottomNavBar({
     Key key,
     @required this.selectedMenu,
   }) : super(key: key);
-
 
   final MenuState selectedMenu;
 
@@ -51,7 +50,7 @@ class CustomBottomNavBar extends StatelessWidget {
                   size: 24,
                 ) ,
                 onPressed: () =>
-                    Navigator.pushReplacementNamed(context, HomeScreen.routeName),
+                    Navigator.pushReplacementNamed(context,  HomeScreen.routeName, arguments: "test"),
               ),
               IconButton(
                 icon: Icon(
@@ -67,7 +66,7 @@ class CustomBottomNavBar extends StatelessWidget {
               IconButton(
                 icon: Icon(
                   Icons.auto_awesome,
-                  color:MenuState.home == selectedMenu
+                  color:MenuState.achievements == selectedMenu
                       ? kPrimaryColor
                       : inActiveIconColor,
                   size: 24,
@@ -78,7 +77,7 @@ class CustomBottomNavBar extends StatelessWidget {
               IconButton(
                 icon: Icon(
                   Icons.attach_money_rounded,
-                  color:MenuState.home == selectedMenu
+                  color:MenuState.coupons == selectedMenu
                       ? kPrimaryColor
                       : inActiveIconColor,
                   size: 24,

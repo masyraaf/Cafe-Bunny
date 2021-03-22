@@ -1,6 +1,7 @@
+import 'package:cafe_bunny/components/auth.dart';
 import 'package:cafe_bunny/components/custom_suffix_icon.dart';
 import 'package:cafe_bunny/components/default_button.dart';
-import 'package:cafe_bunny/screens/account/account_screen.dart';
+import 'package:cafe_bunny/components/loading.dart';
 import 'package:cafe_bunny/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:cafe_bunny/constants.dart';
@@ -9,6 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:cafe_bunny/components/no_account_text.dart';
 import 'package:cafe_bunny/screens/home/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -46,6 +48,10 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
+
+  final AuthService _auth = AuthService();
+  bool loading = false;
+
   final GlobalKey<FormState>_formKey = GlobalKey<FormState>();
   String email;
   String password;
@@ -68,7 +74,7 @@ class _SignFormState extends State<SignForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
+    return loading ? Loading() : Form(
       key: _formKey,
       child: Column(children: [
         buildEmailFormField(),
@@ -81,30 +87,68 @@ class _SignFormState extends State<SignForm> {
           press: () async {
             if (_formKey.currentState.validate()){
               _formKey.currentState.save();
+              setState(() {
+                loading = true;
+              });
+              dynamic result = await _auth.signInWithEmailAndPassword(email, password);
+              setState(() {
+                loading = false;
+              });
+              Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => HomeScreen()));
 
-              try {
-                UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-                    email: email,
-                    password: password
-                );
-
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => HomeScreen()));
-
-                print("You have successfully logged in with email");
-              } on FirebaseAuthException catch (e) {
-                if (e.code == 'user-not-found') {
-                  showAlertDialog(context, "User not found", kUserNotFound);
-                } else if (e.code == 'wrong-password') {
-                  showAlertDialog(context, "Wrong password", kWrongPassword);
-                }
+              if(result == null){
+                setState(() {
+                  addError(error: kInvalidEmailError);
+                  loading = false;
+                });
               }
+
+              // try {
+              //   UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+              //       email: email,
+              //       password: password
+              //   );
+              //
+              //   addUserIDTOSF(userCredential.user.uid);
+              //
+              //   Navigator.push(context,
+              //       MaterialPageRoute(builder: (_) => HomeScreen()));
+              //
+              //   print("You have successfully logged in with email");
+              // } on FirebaseAuthException catch (e) {
+              //   if (e.code == 'user-not-found') {
+              //     showAlertDialog(context, "User not found", kUserNotFound);
+              //   } else if (e.code == 'wrong-password') {
+              //     showAlertDialog(context, "Wrong password", kWrongPassword);
+              //   }
+              // }
             }
           },
         ),
       ],
       )
     );
+  }
+
+Future signInEmail(String email, String password) async {
+  try {
+    UserCredential userCredential = await FirebaseAuth.instance
+        .signInWithEmailAndPassword(
+        email: email,
+        password: password
+    );
+
+    addUserIDTOSF(userCredential.user.uid);
+  } catch (e) {
+    print(e.toString());
+    return null;
+  }
+}
+
+  addUserIDTOSF(userID) async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('userID', userID);
   }
 
   showAlertDialog(BuildContext context, String titleError, String errorMsg) {

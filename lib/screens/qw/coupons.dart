@@ -1,9 +1,12 @@
+import 'package:cafe_bunny/components/custom_bottom_nav_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cafe_bunny/screens/qw/globals.dart' as gb;
 
+import '../../constants.dart';
+
 class Coupons extends StatefulWidget {
-  static String routeName = "/achievements";
+  static String routeName = "/coupons";
   @override
   _CouponsState createState() => _CouponsState();
 }
@@ -12,18 +15,18 @@ class _CouponsState extends State<Coupons> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[850],
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           'Coupons',
           style: TextStyle(
-            color: Colors.white,
+            color: kPrimaryColor,
             fontWeight: FontWeight.bold,
             fontSize: 20,
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.white,
       ),
       body: Column(
           children: <Widget> [
@@ -37,7 +40,7 @@ class _CouponsState extends State<Coupons> {
               ),
               SizedBox(width: 10),
               Container(
-                color: Colors.blue,
+                color: kPrimaryLightColor,
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(40,5,40,5),
                   child: Text(
@@ -66,12 +69,12 @@ class _CouponsState extends State<Coupons> {
                       leading: Icon(
                         Icons.attach_money_rounded,
                         size: 56.0,
-                        color: Colors.blueAccent,
+                        color: kPrimaryLightColor,
                       ),
                       title: Text(
                         gb.inventory[index].title,
                         style: TextStyle(
-                          color: Colors.black,
+                          color: kPrimaryLightColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                         ),
@@ -110,7 +113,7 @@ class _CouponsState extends State<Coupons> {
                             );
                           });
                         },
-                        color: Colors.blue,
+                        color: kPrimaryLightColor,
                         child: Text(
                           'USE',
                           style: TextStyle(
@@ -127,6 +130,7 @@ class _CouponsState extends State<Coupons> {
             ),
           ]
         ),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.coupons),
       );
     }
 }

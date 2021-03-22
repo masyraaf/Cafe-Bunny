@@ -16,5 +16,5 @@ final Map<String, WidgetBuilder> routes = {
   HomeScreen.routeName: (context) => HomeScreen(),
   AccountScreen.routeName: (context) => AccountScreen(),
   Achievements.routeName: (context) => Achievements(),
-  Coupons.routeName: (context) => Achievements(),
+  Coupons.routeName: (context) => Coupons(),
 };
