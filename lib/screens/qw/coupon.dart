@@ -5,13 +5,13 @@ import 'package:cafe_bunny/screens/qw/globals.dart' as gb;
 import 'package:cafe_bunny/screens/qw/couponClass.dart';
 import '../../constants.dart';
 
-class Coupon2 extends StatefulWidget {
-  static String routeName = "/coupon2";
+class Coupon extends StatefulWidget {
+  static String routeName = "/coupon";
   @override
-  _Coupon2State createState() => _Coupon2State();
+  _CouponState createState() => _CouponState();
 }
 
-class _Coupon2State extends State<Coupon2> {
+class _CouponState extends State<Coupon> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -308,7 +308,7 @@ class _Coupon2State extends State<Coupon2> {
                         child: Align(
                           child: CircleAvatar(
                             backgroundImage: AssetImage(
-                                "images/avatar2.jpg"),
+                                "images/avatar1.png"),
                             radius: 65.0,
                             // maxRadius: 200.0,
                           ),
@@ -322,7 +322,7 @@ class _Coupon2State extends State<Coupon2> {
         ),
       ]
       ),
-      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.achievements),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.coupon),
     );
   }
 }

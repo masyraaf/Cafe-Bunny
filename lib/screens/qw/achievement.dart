@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:cafe_bunny/screens/qw/globals.dart' as gb;
 import 'package:cafe_bunny/screens/qw/couponClass.dart';
 
-class Achievement2 extends StatefulWidget {
-  static String routeName = "/achievement2";
+class Achievement extends StatefulWidget {
+  static String routeName = "/achievement";
   @override
-  _Achievement2State createState() => _Achievement2State();
+  _AchievementState createState() => _AchievementState();
 }
 
-class _Achievement2State extends State<Achievement2> {
+class _AchievementState extends State<Achievement> {
 
   bool checkLvl(int level){
     if(gb.playerLevel >= level) return true;
@@ -417,7 +417,7 @@ class _Achievement2State extends State<Achievement2> {
                           child: Align(
                             child: CircleAvatar(
                               backgroundImage: AssetImage(
-                                  "images/avatar2.jpg"),
+                                  "images/avatar1.png"),
                               radius: 65.0,
                               // maxRadius: 200.0,
                             ),
@@ -431,7 +431,7 @@ class _Achievement2State extends State<Achievement2> {
           ),
         ]
       ),
-      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.achievements),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.achievement),
     );
   }
 }
