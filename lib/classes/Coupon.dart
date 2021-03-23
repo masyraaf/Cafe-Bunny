@@ -3,5 +3,5 @@ class  Coupon{
   String code;
   String entitlement;
 
-  Coupon(this.id, this.code, this.entitlement);
+  Coupon({this.id, this.code, this.entitlement});
 }

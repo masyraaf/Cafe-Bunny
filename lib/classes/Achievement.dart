@@ -3,5 +3,5 @@ class  Achievement{
   String description;
   String type;
 
-  Achievement(this.id, this.description, this.type);
+  Achievement({this.id, this.description, this.type});
 }

@@ -7,19 +7,20 @@ import 'package:cafe_bunny/components/card.dart';
 import 'avatar_pic.dart';
 import 'package:cafe_bunny/constants.dart';
 import 'package:provider/provider.dart';
+import 'package:cafe_bunny/components/database.dart';
 
 
 
 class Body extends StatelessWidget {
 
 
+
+
   @override
   Widget build(BuildContext context) {
 
     final AuthService _auth = AuthService();
-
-    final user = Provider.of<MyUser>(context);
-    print(user);
+    // MyUser user = DatabaseService().getUserData();
 
     return SingleChildScrollView(
       padding: EdgeInsets.symmetric(vertical: 20),
@@ -28,7 +29,7 @@ class Body extends StatelessWidget {
           ProfilePic(),
           SizedBox(height: 20),
           Text(
-            "Alice James",
+            "test",
             style: TextStyle(
               fontSize: 22.0,
               color: Colors.black,
@@ -37,19 +38,19 @@ class Body extends StatelessWidget {
           InfoCard(
             titleText: "Title",
             titleColor: kPrimaryColor,
-            dataText: user.uid,
+            dataText:"title",
             dataColor: kSecondaryColor,
           ),
           InfoCard(
             titleText: "Level",
             titleColor: kPrimaryColor,
-            dataText: user.uid,
+            dataText: "uid",
             dataColor: kSecondaryColor,
           ),
           InfoCard(
             titleText: "Exp Points",
             titleColor: kPrimaryColor,
-            dataText: user.uid,
+            dataText: "exp",
             dataColor: kSecondaryColor,
           ),
 

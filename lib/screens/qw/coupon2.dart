@@ -18,7 +18,7 @@ class _Coupon2State extends State<Coupon2> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text(
-          'Achievements',
+          'Coupons',
           style: TextStyle(
             color: kPrimaryColor,
             fontWeight: FontWeight.bold,

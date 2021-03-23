@@ -2,10 +2,10 @@ import 'package:cafe_bunny/screens/account/account_screen.dart';
 import 'package:cafe_bunny/screens/qw/achievements.dart';
 import 'package:cafe_bunny/screens/qw/coupons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cafe_bunny/screens/home/home_screen.dart';
 import 'package:cafe_bunny/screens/qw/achievement2.dart';
 import 'package:cafe_bunny/screens/qw/coupon2.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constants.dart';
 
@@ -52,7 +52,7 @@ class CustomBottomNavBar extends StatelessWidget {
                   size: 24,
                 ) ,
                 onPressed: () =>
-                    Navigator.pushReplacementNamed(context,  HomeScreen.routeName, arguments: "test"),
+                    Navigator.pushReplacementNamed(context,  HomeScreen.routeName),
               ),
               IconButton(
                 icon: Icon(
