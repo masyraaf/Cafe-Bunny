@@ -68,7 +68,7 @@ class _AchievementsState extends State<Achievements> {
           ),
           SizedBox(height: 30),
           SizedBox(
-            height: 400,
+            height: 350,
             width: 400,
             child: ListTileTheme(
               selectedTileColor: Colors.blue,

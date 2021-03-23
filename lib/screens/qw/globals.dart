@@ -1,8 +1,8 @@
 library globals;
 import 'package:cafe_bunny/screens/qw/couponClass.dart';
 
-String playerName = 'Buttsoup';
-String playerTitle = 'Test Bunny';
+String playerName = 'Ask Ketchum';
+String playerTitle = 'Cultured Bunny';
 int playerLevel = 1;
 int hopCount = 0;
 int expFlag= 0;

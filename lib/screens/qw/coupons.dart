@@ -59,7 +59,7 @@ class _CouponsState extends State<Coupons> {
             ),
             SizedBox(height: 30),
             SizedBox(
-              height: 400,
+              height: 350,
               width: 400,
               child: ListView.builder(
                 itemCount: gb.inventory.length,
