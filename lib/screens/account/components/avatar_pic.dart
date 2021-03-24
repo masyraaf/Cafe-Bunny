@@ -9,14 +9,17 @@ class ProfilePic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 115,
-      width: 115,
+      height: 135,
+      width: 135,
       child: Stack(
         fit: StackFit.expand,
         overflow: Overflow.visible,
         children: [
           CircleAvatar(
-            backgroundImage: AssetImage("assets/images/Profile Image.png"),
+            backgroundImage: AssetImage(
+                "images/avatar1.png"),
+            radius: 65.0,
+            // maxRadius: 200.0,
           ),
           Positioned(
             right: -16,

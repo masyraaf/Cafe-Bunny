@@ -134,10 +134,12 @@ class _CouponState extends State<Coupon> {
                                       Align(
                                         child: Text('"${gb.playerTitle}"',
                                             style: TextStyle(
-                                                color: Color.fromRGBO(
-                                                    50, 50, 93, 1),
-                                                fontSize: 18.0,
-                                                fontWeight: FontWeight.w400)),
+                                                color: Colors.orangeAccent,
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.w400,
+                                                fontFamily: 'Lobster',
+                                            )
+                                        ),
                                       ),
                                       SizedBox(height: 30.0),
                                       Row(
@@ -208,14 +210,14 @@ class _CouponState extends State<Coupon> {
                                           MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                              "Achievement",
+                                              "Inventory",
                                               style: TextStyle(
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 13.0,
                                                   color: Color.fromRGBO(94, 114, 228, 1.0)),
                                             ),
                                             Text(
-                                              "Status",
+                                              "",
                                               style: TextStyle(
                                                   color: Color.fromRGBO(94, 114, 228, 1.0),
                                                   fontSize: 13.0,
