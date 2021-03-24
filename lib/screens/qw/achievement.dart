@@ -144,10 +144,11 @@ class _AchievementState extends State<Achievement> {
                                         Align(
                                           child: Text('"${gb.playerTitle}"',
                                               style: TextStyle(
-                                                  color: Color.fromRGBO(
-                                                      50, 50, 93, 1),
-                                                  fontSize: 18.0,
-                                                  fontWeight: FontWeight.w400)),
+                                                color: Colors.orangeAccent,
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.w400,
+                                                fontFamily: 'Lobster',
+                                              )),
                                         ),
                                         SizedBox(height: 30.0),
                                         Row(

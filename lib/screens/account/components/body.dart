@@ -8,13 +8,11 @@ import 'avatar_pic.dart';
 import 'package:cafe_bunny/constants.dart';
 import 'package:provider/provider.dart';
 import 'package:cafe_bunny/components/database.dart';
+import 'package:cafe_bunny/screens/qw/globals.dart' as gb;
 
 
 
 class Body extends StatelessWidget {
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -22,52 +20,62 @@ class Body extends StatelessWidget {
     final AuthService _auth = AuthService();
     // MyUser user = DatabaseService().getUserData();
 
-    return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(vertical: 20),
-      child: Column(
-        children: [
-          ProfilePic(),
-          SizedBox(height: 20),
-          Text(
-            "test",
-            style: TextStyle(
-              fontSize: 22.0,
-              color: Colors.black,
+    return Stack(
+      children: <Widget>[
+        Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    alignment: Alignment.topCenter,
+                    image: AssetImage("images/background2.png"),
+                    fit: BoxFit.fitWidth))),
+        SingleChildScrollView(
+        padding: EdgeInsets.symmetric(vertical: 20),
+        child: Column(
+          children: [
+            ProfilePic(),
+            SizedBox(height: 20),
+            Text(
+              "Account Details",
+              style: TextStyle(
+                fontSize: 22.0,
+                color: Colors.white,
+              ),
             ),
-          ),
-          InfoCard(
-            titleText: "Title",
-            titleColor: kPrimaryColor,
-            dataText:"title",
-            dataColor: kSecondaryColor,
-          ),
-          InfoCard(
-            titleText: "Level",
-            titleColor: kPrimaryColor,
-            dataText: "uid",
-            dataColor: kSecondaryColor,
-          ),
-          InfoCard(
-            titleText: "Exp Points",
-            titleColor: kPrimaryColor,
-            dataText: "exp",
-            dataColor: kSecondaryColor,
-          ),
+            InfoCard(
+              titleText: "Equipped Title",
+              titleColor: kPrimaryColor,
+              dataText:'${gb.playerTitle}',
+              dataColor: Colors.orangeAccent,
+            ),
+            InfoCard(
+              titleText: "Bunny Level",
+              titleColor: kPrimaryColor,
+              dataText: "${gb.playerLevel}",
+              dataColor: kSecondaryColor,
+            ),
+            InfoCard(
+              titleText: "Bunny EXP",
+              titleColor: kPrimaryColor,
+              dataText: "${gb.expFlag}/2",
+              dataColor: kSecondaryColor,
+            ),
 
-          SizedBox(height: 20),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child:   DefaultButton(
-              text: "Log Out",
-              press: () async{
-                //if all valid, then navigate to  home screen
-                await _auth.signOut();
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => SignInScreen()));
-              },
+            SizedBox(height: 20),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child:   DefaultButton(
+                text: "Log Out",
+                press: () async{
+                  //if all valid, then navigate to  home screen
+                  await _auth.signOut();
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => SignInScreen()));
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
+      ],
     );
   }
 }

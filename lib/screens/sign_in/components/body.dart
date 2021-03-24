@@ -9,6 +9,7 @@ import 'package:cafe_bunny/components/form_error.dart';
 import 'package:flutter/services.dart';
 import 'package:cafe_bunny/components/no_account_text.dart';
 import 'package:cafe_bunny/screens/home/home_screen.dart';
+import 'package:cafe_bunny/screens/home/home_screen2.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -95,7 +96,7 @@ class _SignFormState extends State<SignForm> {
                 loading = false;
               });
               Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => HomeScreen()));
+                        MaterialPageRoute(builder: (_) => HomeScreen2()));
 
               if(result == null){
                 setState(() {
